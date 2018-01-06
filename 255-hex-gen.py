@@ -277,14 +277,9 @@ color_list = [
 def hex_gen():
         return random.choice(color_list)
 
-x = hex_gen()
-
-color = fg(x)
-reset = attr('reset')
-bg = bg(x)
-
 def hex_col():
-    return color + bg + x + reset
+    x = hex_gen()
+    return fg(x) + bg(x) + x + attr('reset')
 
 while True:
     print hex_col(),
