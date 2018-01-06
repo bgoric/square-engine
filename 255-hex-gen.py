@@ -261,30 +261,12 @@ color_list = [
     "#eeeeee",
     ]
 
-#def hex():
-#    return random.choice(color_list)
-
-#x = hex()
-
-#color = fg(x)
-#reset = attr('reset')
-#bg = bg(x)
-
-#y = color + bg + x + reset
-
-#print y
-
 def hex_gen():
         return random.choice(color_list)
 
-x = hex_gen()
-
-color = fg(x)
-reset = attr('reset')
-bg = bg(x)
-
 def hex_col():
-    return color + bg + x + reset
+    x = hex_gen()
+    return fg(x) + bg(x) + x + attr('reset')
 
 while True:
     print hex_col(),
